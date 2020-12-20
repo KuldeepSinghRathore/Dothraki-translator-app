@@ -4,7 +4,7 @@ var txtinput = document.querySelector("#txt-input");
 
 var outputDiv = document.querySelector("#output");
 
-var serverApiUrl = "ttps://api.funtranslations.com/translate/dothraki.json";
+var serverApiUrl = "https://api.funtranslations.com/translate/dothraki.json";
 
 function getTranslation(text){
     return serverApiUrl + "?" + "text=" + text
@@ -17,7 +17,7 @@ function errorHandler(error){
 
 function clickEventHandler(){
     var inputText = txtinput.value;
-
+  
 
 //fetch starts
 fetch(getTranslation(inputText))
