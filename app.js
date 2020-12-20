@@ -4,7 +4,7 @@ var txtinput = document.querySelector("#txt-input");
 
 var outputDiv = document.querySelector("#output");
 
-var serverApiUrl = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.js";
+var serverApiUrl = "ttps://api.funtranslations.com/translate/dothraki.json";
 
 function getTranslation(text){
     return serverApiUrl + "?" + "text=" + text
@@ -25,7 +25,7 @@ fetch(getTranslation(inputText))
     return response.json()
 })
 .then(function logJSON(json){
-    // console.log(json);
+    console.log(json);
     translatedText = json.contents.translated;
     outputDiv.innerText = translatedText;
 })
