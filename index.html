@@ -1,9 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dothraki Translator App</title>
+  
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dothraki Translator App</title>
+    <style>
+      #txt-input,
+      #output {
+        width: 50%;
+        height: 5rem;
+      }
+      #btn-translate {
+        display: block;
+      }
+      #output {
+        border: 3px solid grey;
+      }
+      #txt-input{
+          text-align: center;
+          
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <h1>Dothraki's Way is the Ultimate way </h1>
+    <textarea
+      name=""
+      id="txt-input"
+      placeholder="Please Put in your message to translate"
+    ></textarea>
+    <button id="btn-translate">Click Me</button>
+
+    <h2>Output Comes Here 👇👇</h2>
+    <div id="output"></div>
+    <script src="app.js" type="text/javascript"></script>
+  </body>
+</html> 
+  </body>
 </html>
