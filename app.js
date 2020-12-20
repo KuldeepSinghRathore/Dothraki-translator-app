@@ -1,22 +1,22 @@
-var btnTranslate = document.querySelector("btn-translate");
+var btnTranslate = document.querySelector("#btn-translate");
 
 var txtinput = document.querySelector("#txt-input");
 
 var outputDiv = document.querySelector("#output");
 
-var serverApiUrl = "";
+var serverApiUrl = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.js";
 
 function getTranslation(text){
-    return serverApiUrl + "?" + "text=" + text;
+    return serverApiUrl + "?" + "text=" + text
 }
 
 function errorHandler(error){
     console.log("error occured", error);
-    alert("Server issue Please try after sometime");
+    alert("Server issue Please try after sometime")
 }
 
 function clickEventHandler(){
-    var inputText = txtinput.nodeValue;
+    var inputText = txtinput.value;
 
 
 //fetch starts
@@ -25,10 +25,11 @@ fetch(getTranslation(inputText))
     return response.json()
 })
 .then(function logJSON(json){
+    // console.log(json);
     translatedText = json.contents.translated;
-    outputDiv.innerText =translatedText;
+    outputDiv.innerText = translatedText;
 })
 .catch(errorHandler)
 };
 
-btnTranslate.addEventListener("click", clickEventHandler);
+btnTranslate.addEventListener("click", clickEventHandler );
