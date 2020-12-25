@@ -27,7 +27,7 @@ nav span {
   width: 50%;
   height: 5rem;
 }
-.btn {
+#btn {
   display: block;
   margin: auto;
   background-color: hsl(0, 0%, 90%);
@@ -39,8 +39,8 @@ nav span {
   font-weight: 600;
 }
 
-.btn:hover,
-.btn:focus {
+#btn:hover,
+#btn:focus {
   background-color: rgb(231, 53, 53);
   box-shadow: 0 0 5px 0 rgb(223, 82, 82);
   color: #fafafa;
