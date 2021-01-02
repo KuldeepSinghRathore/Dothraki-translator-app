@@ -4,25 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dothraki Translator App</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanalei+Fill&family=Montserrat:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
       <nav>
-        <span>Dothraki Translator App</span>
+        <span>Dothraki Translator</span>
       </nav>
     </header>
     <div class="inputoutput">
       <textarea
         name=""
         id="txt-input"
-        placeholder="Type... to translate"
+        placeholder="Please Put in your message to translate"
       ></textarea>
-      <button id="btn">Click to Translate</button>
+      <h2>Output Here👇👇</h2>
+      <button id="btn-translate">Click to Translate</button>
 
-      <h2>Output Comes Here 👇👇</h2>
-      <div id="output"></div>
-    </div>
+      <div id="output-div"></div>
+      <h2>To listen 👇👇</h2>
+      <button id="btn-speak">
+        <i class="fa fa-volume-up" aria-hidden="true"></i>
+      </button>
     <footer>
       Made by <a href="https://kuldeepsingh.netlify.app/">Kuldeep Singh</a> With
       ❤️

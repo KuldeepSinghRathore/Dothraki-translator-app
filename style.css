@@ -1,37 +1,61 @@
+:root {
+  --main-color: red;
+  --primary-color: rgb(192, 34, 34);
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  background-image: linear-gradient(rgba(77, 73, 73, 0.349), transparent),
+    url(./img/indian-557261_1920.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
 a {
   text-decoration: none;
   color: #fafafa;
 }
+a,
+h1,
+h2,
+h3,
+h4,
+textarea {
+  font-family: "Montserrat", sans-serif;
+}
 nav {
   padding: 2rem;
-  background-color: #ef4444;
+  background-color: var(--main-color);
 }
 nav span {
   padding: 1rem;
   text-transform: uppercase;
   margin: auto;
-  color: #ef4444;
-  border: 1px solid #ef4444;
-  background: #fafafa;
-  border-radius: 0.5rem;
+  color: black;
+  border: 1px solid var(--main-color);
+  background: var(--primary-color);
+  border-radius: 0.4rem;
   text-transform: capitalize;
-  font-weight: 800;
+  font-family: "Hanalei Fill", cursive;
+  font-size: 1.5rem;
 }
 #txt-input,
-#output {
+#output-div {
   width: 50%;
   height: 5rem;
+  outline: none;
 }
-#btn {
+
+#btn-translate {
   display: block;
   margin: auto;
-  background-color: hsl(0, 0%, 90%);
-  border: 1px solid hsl(0, 0%, 70%);
+  background-color: var(--primary-color);
+  border: 1px solid;
   outline: none;
   cursor: pointer;
   padding: 0.5em 1em;
@@ -39,32 +63,46 @@ nav span {
   font-weight: 600;
 }
 
-#btn:hover,
-#btn:focus {
-  background-color: rgb(231, 53, 53);
-  box-shadow: 0 0 5px 0 rgb(223, 82, 82);
+#btn-translate:hover,
+#btn-translate:focus {
+  background-color: var(--main-color);
+  box-shadow: 0 0 5px 0 #e0c274;
   color: #fafafa;
 }
 
-#output {
+#output-div {
   border: 3px solid grey;
-  margin: auto;
+  margin: 1rem auto;
   border-radius: 0.4rem;
+  font-size: 1.2rem;
+  color: azure;
+  padding: 1rem;
 }
 #txt-input,
 h2 {
   margin: 1rem 0;
+  color: rgb(233, 206, 206);
 }
 textarea#txt-input {
   text-align: center;
   padding: 1rem;
   /* font-size: 2rem; */
   border-radius: 0.4rem;
+  background: none;
+  font-size: 1.2rem;
+  color: azure;
 }
 #txt-input::placeholder {
   text-align: center;
+  font-size: 1rem;
+  padding: 0.1rem;
+  color: whitesmoke;
+}
+#output-div::placeholder {
+  text-align: center;
 
   padding: 0.1rem;
+  color: whitesmoke;
 }
 #txt-input {
   resize: none;
@@ -74,9 +112,15 @@ textarea#txt-input {
   text-align: center;
   margin-top: 0.5rem;
 }
+button#btn-speak {
+  color: var(--main-color);
+  font-size: 2rem;
+  cursor: pointer;
+  outline: none;
+}
 footer {
   padding: 2rem;
-  background-color: #dc2626;
+  background-color: var(--main-color);
   position: fixed;
   bottom: 0;
   width: 100%;

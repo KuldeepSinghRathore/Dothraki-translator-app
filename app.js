@@ -1,34 +1,40 @@
-var btnTranslate = document.querySelector("#btn");
+const btn = document.querySelector("#btn-translate");
 
-var txtinput = document.querySelector("#txt-input");
+const inputDiv = document.querySelector("#txt-input");
 
-var outputDiv = document.querySelector("#output");
-
-var serverApiUrl = "https://api.funtranslations.com/translate/dothraki.json";
-
-function getTranslation(text) {
-  return serverApiUrl + "?" + "text=" + text;
+const outputDiv = document.querySelector("#output-div");
+const btnSpeak = document.querySelector("#btn-speak");
+let serverApi = "https://api.funtranslations.com/translate/dothraki.json";
+function getTranslate(whatever) {
+  return serverApi + "?" + "text= " + whatever;
 }
-
-function errorHandler(error) {
-  console.log("error occured", error);
-  alert("Server issue Please try after sometime");
-}
-
-function clickEventHandler() {
-  var inputText = txtinput.value;
-
-  //fetch starts
-  fetch(getTranslation(inputText))
-    .then(function responseHandler(response) {
-      return response.json();
-    })
-    .then(function logJSON(json) {
-      console.log(json);
-      translatedText = json.contents.translated;
+btn.addEventListener("click", () => {
+  let inputText = inputDiv.value;
+  // console.log(inputText);
+  fetch(getTranslate(inputText))
+    .then((response) => response.json())
+    .then((json) => {
+      let translatedText = json.contents.translated;
       outputDiv.innerText = translatedText;
-    })
-    .catch(errorHandler);
-}
-
-btn.addEventListener("click", clickEventHandler);
+    });
+  btnSpeak.addEventListener("click", () => {
+    if ("speechSynthesis" in window) {
+      var synthesis = window.speechSynthesis;
+      // Get the first `en` language voice in the list
+      var voice = synthesis.getVoices().filter(function (voice) {
+        return voice.lang === "en";
+      })[0];
+      // Create an utterance object
+      var utterance = new SpeechSynthesisUtterance(outputDiv.innerText);
+      // Set utterance properties
+      utterance.voice = voice;
+      utterance.pitch = 1.5;
+      utterance.rate = 1.25;
+      utterance.volume = 0.8;
+      // Speak the utterance
+      synthesis.speak(utterance);
+    } else {
+      console.log("Text-to-speech not supported.");
+    }
+  });
+});
